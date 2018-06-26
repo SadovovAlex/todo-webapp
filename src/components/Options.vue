@@ -2,28 +2,25 @@
     <div class="todo-info-page">
 
         <div>
-            <h4>Account Sign-in</h4>
+            <h4>Авторизация</h4>
             <div v-if="user.provider">
                 <div class="user-wrap">
                     <div class="user-photo" :style="'background-image: url('+ user.photo +')'"></div>
                     <div class="user-info">
-                        <span>Hello, {{ user.name }}</span><span v-if="user.email"> ({{ user.email }})</span>.
+                        <span>Привет, {{ user.name }}</span><span v-if="user.email"> ({{ user.email }})</span>.
                     </div>
                 </div>
                 <p>
-                    You have authenticated using <span class="text-primary">{{ user.provider }}</span>
-                    and are currently logged in. Your todos data will be <b>saved remotely</b> so you can have
-                    access to it from <b>other browsers and devices</b>.
+                    Ты авторизован <span class="text-primary">{{ user.provider }}</span>
+                    Твои списки буду синхронизированы при наличии интернета и доступны на других твоих устройствах.
                 </p>
                 <p>
-                    <button class="btn bg-secondary-hover icon-logout icon-pr shadow-paper" @click="emit( 'userLogoff' )">Sign off</button>
+                    <button class="btn bg-secondary-hover icon-logout icon-pr shadow-paper" @click="emit( 'userLogoff' )">Выйти</button>
                 </p>
             </div>
             <div v-else>
                 <p>
-                    Your app data <b>will not</b> be available <b>across browsers or devices</b>,
-                    unless you <b>authenticate</b> using an <b>external service</b> to have your data
-                    <b>saved remotely</b> so you can access it from <b>other devices</b> by signing in there as well.
+                    Данные остануться доступны только на этом устройстве, для того чтобы просматривать их везде, авторизуйтесь:
                 </p>
                 <p>
                     <button class="btn bg-secondary-hover icon-google icon-pr shadow-paper" @click="emit( 'userLogin', 'google' )">Google</button>
@@ -36,60 +33,59 @@
         <hr />
 
         <div>
-            <h4>Data Management</h4>
+            <h4>Данные</h4>
             <p>
-                Import and export your todos data in <b>JSON format</b>.
-                This can be used as a way to <b>backup your data</b>, or take it
-                <b>across browsers and devices</b> without having to sign in.
+                Выгрузка и загрузка задач в <b>JSON формате</b>.
+                Вы можете выгрузить задачи для <b>надежного сохранения</b> или использовать для загрузки на устройства не имеющие синхронизации.
             </p>
             <p>
-                <button class="btn bg-secondary-hover icon-download icon-pr shadow-paper" @click="exportData()">Export</button>
-                <button class="btn bg-secondary-hover icon-save icon-pr shadow-paper" @click="importData()">Import</button>
-                <button v-if="hasData()" class="btn bg-danger-hover icon-trash icon-pr shadow-paper" @click="flushData()">Erase</button>
+                <button class="btn bg-secondary-hover icon-download icon-pr shadow-paper" @click="exportData()">Выгрузить</button>
+                <button class="btn bg-secondary-hover icon-save icon-pr shadow-paper" @click="importData()">Загрузить</button>
+                <button v-if="hasData()" class="btn bg-danger-hover icon-trash icon-pr shadow-paper" @click="flushData()">Очистить</button>
             </p>
         </div>
 
         <hr />
 
         <div>
-            <h4>List Options</h4>
+            <h4>Опции</h4>
 
             <div class="form-wrap">
 
                 <div class="form-row">
-                    <div class="form-title">Place new tasks on:</div>
+                    <div class="form-title">Располагать новую задачу:</div>
                     <div class="form-controls">
                         <label class="form-toggle">
                             <input type="radio" name="taskInsertPosition" value="top" :checked="options.taskInsertPosition == 'top'" @change="onChange( $event )" />
-                            <span>Top</span>
+                            <span>Сверху</span>
                         </label>
                         <label class="form-toggle">
                             <input type="radio" name="taskInsertPosition" value="bottom" :checked="options.taskInsertPosition == 'bottom'" @change="onChange( $event )" />
-                            <span>Bottom</span>
+                            <span>Снизу</span>
                         </label>
                     </div>
                 </div>
 
                 <div class="form-row">
-                    <div class="form-title">Place new lists on:</div>
+                    <div class="form-title">Располагать новый список:</div>
                     <div class="form-controls">
                         <label class="form-toggle">
                             <input type="radio" name="listInsertPosition" value="top" :checked="options.listInsertPosition == 'top'" @change="onChange( $event )" />
-                            <span>Top</span>
+                            <span>Сверху</span>
                         </label>
                         <label class="form-toggle">
                             <input type="radio" name="listInsertPosition" value="bottom" :checked="options.listInsertPosition == 'bottom'" @change="onChange( $event )" />
-                            <span>Bottom</span>
+                            <span>Снизу</span>
                         </label>
                     </div>
                 </div>
 
                 <div class="form-row">
-                    <div class="form-title">Auto select new lists:</div>
+                    <div class="form-title">Автовыбор нового списка:</div>
                     <div class="form-controls">
                         <label class="form-toggle">
                             <input type="checkbox" name="listAutoSelect" :checked="options.listAutoSelect" @change="onChange( $event )" />
-                            <span>Toggle</span>
+                            <span>Включить</span>
                         </label>
                     </div>
                 </div>

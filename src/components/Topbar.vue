@@ -9,7 +9,7 @@
 
             <div class="header-input">
                 <input type="text"
-                    placeholder="New list name..."
+                    placeholder="Новый список..."
                     autocomplete="off"
                     v-model="todos.name"
                     @focus="onFocus( $event )"
@@ -28,14 +28,14 @@
             <div class="header-btn dropdown" v-dropdown>
                 <span class="icon-menu text-secondary-hover dropdown-trigger" id="main-menu-trigger"></span>
                 <ul class="dropdown-left dropdown-bottom">
-                    <li :class="{ 'active': ( component === 'home' ) }"><a href="#/home" class="icon-home icon-pr">App home</a></li>
-                    <li :class="{ 'active': ( component === 'options' ) }"><a href="#/options" class="icon-user icon-pr">Account &amp; options</a></li>
-                    <li :class="{ 'active': ( component === 'about' ) }"><a href="#/about" class="icon-code icon-pr">About this app</a></li>
-                    <li v-if="hasTasks()"><a href="#" class="icon-check icon-pr text-success-hover" @click.prevent="emit( 'tasksToggle', true )">Check all tasks</a></li>
-                    <li v-if="hasTasks()"><a href="#" class="icon-clock icon-pr text-warning-hover" @click.prevent="emit( 'tasksToggle', false )">Uncheck all tasks</a></li>
-                    <li v-if="hasTasks()"><a href="#" class="icon-flag icon-pr text-info-hover" @click.prevent="emit( 'tasksClean' )">Remove complete tasks</a></li>
-                    <li v-if="hasTasks()"><a href="#" class="icon-trash icon-pr text-danger-hover" @click.prevent="emit( 'tasksFlush' )">Remove all tasks</a></li>
-                    <li v-if="hasTodos()"><a href="#" class="icon-x icon-pr text-danger-hover" @click.prevent="todosDelete()">Delete todos list</a></li>
+                    <li :class="{ 'active': ( component === 'home' ) }"><a href="#/home" class="icon-home icon-pr">Главная</a></li>
+                    <li :class="{ 'active': ( component === 'options' ) }"><a href="#/options" class="icon-user icon-pr">Аккаунт &amp; опции</a></li>
+                    <li :class="{ 'active': ( component === 'about' ) }"><a href="#/about" class="icon-code icon-pr">О приложении</a></li>
+                    <li v-if="hasTasks()"><a href="#" class="icon-check icon-pr text-success-hover" @click.prevent="emit( 'tasksToggle', true )">Все как выполнено</a></li>
+                    <li v-if="hasTasks()"><a href="#" class="icon-clock icon-pr text-warning-hover" @click.prevent="emit( 'tasksToggle', false )">Все не выполнено</a></li>
+                    <li v-if="hasTasks()"><a href="#" class="icon-flag icon-pr text-info-hover" @click.prevent="emit( 'tasksClean' )">Удалить выполненные</a></li>
+                    <li v-if="hasTasks()"><a href="#" class="icon-trash icon-pr text-danger-hover" @click.prevent="emit( 'tasksFlush' )">Удалить все</a></li>
+                    <li v-if="hasTodos()"><a href="#" class="icon-x icon-pr text-danger-hover" @click.prevent="todosDelete()">Удалить список</a></li>
                 </ul>
             </div>
 

@@ -6,7 +6,7 @@
 
             <div class="saved-list-heading">
                 <h4 v-html="headingText()"></h4>
-                <span>Account: <a class="icon-key icon-pr text-document-hover" href="#/options" v-html="storageInfo()" title="Manage" v-tooltip></a></span>
+                <span>Аккаунт: <a class="icon-key icon-pr text-document-hover" href="#/options" v-html="storageInfo()" title="Manage" v-tooltip></a></span>
             </div>
 
             <ul v-if="countLists()" class="saved-list-container sortable">
@@ -22,9 +22,9 @@
                     </div>
 
                     <div class="saved-list-count">
-                        <span class="saved-list-total" v-html="countTotal( todos ) + ' total'"></span>
-                        <span class="saved-list-done" v-html="countDone( todos ) + ' done'"></span>
-                        <span class="saved-list-remain" v-html="countRemain( todos ) + ' remain'"></span>
+                        <span class="saved-list-total" v-html="countTotal( todos ) + ' всего'"></span>
+                        <span class="saved-list-done" v-html="countDone( todos ) + ' готово'"></span>
+                        <span class="saved-list-remain" v-html="countRemain( todos ) + ' в работе'"></span>
                     </div>
 
                 </li>

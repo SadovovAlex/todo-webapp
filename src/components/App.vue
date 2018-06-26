@@ -61,11 +61,16 @@ localforage.config({
 
 // setup firebase
 firebase.initializeApp({
-    apiKey: "AIzaSyAae9QnCPyaBzPAkRBmYbM6zKdFFNosBXI",
+/*    apiKey: "AIzaSyAae9QnCPyaBzPAkRBmYbM6zKdFFNosBXI",
     authDomain: "todoswebapp.firebaseapp.com",
     databaseURL: "https://todoswebapp.firebaseio.com",
     storageBucket: "todoswebapp.appspot.com",
-    messagingSenderId: "15015118956",
+    messagingSenderId: "15015118956",*/
+    apiKey: "AIzaSyBwdjjWXy5SZmBl8WIolowrJmpzZKo13ZE",
+    authDomain: "todowebapp-3ebc4.firebaseapp.com",
+    databaseURL: "https://todowebapp-3ebc4.firebaseio.com",
+    storageBucket: "todowebapp-3ebc4.appspot.com",
+    messagingSenderId: "1061469628252"
 });
 
 // globals

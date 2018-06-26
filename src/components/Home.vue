@@ -2,35 +2,29 @@
 <template>
     <div class="todo-info-page">
 
-        <h3>Hello and Welcome</h3>
+        <h3>Привет</h3>
         <p>
-            This is a simple web application for creating and managing TODO lists.
+            Это приложение для создания списков дел.
         </p>
         <p>
-            To get started, you first need to create a
-            <a class="icon-plus icon-pr" href="#" @click.prevent="emit( 'todosCreate' )">New List</a>,
-            or select one you already created from the
+            Создай новый список
+            <a class="icon-plus icon-pr" href="#" @click.prevent="emit( 'todosCreate' )">Новый список</a>,
+            или выбери существующий в правой части экрана
             <a class="icon-book icon-pr" href="#" @click.prevent="emit( 'showSidebar' )">Sidebar Panel</a>
-            to the right.
         </p>
-        <p>
+        
+        <!-- <p>
             You can find more information about how to use this application along with
             other technical and author details by looking at the
             <a class="icon-code icon-pr" href="#/about">About this app</a> page.
-        </p>
+        </p> -->
         <p>
-            To manage options for this application, or to authenticate using an external
-            account to keep your data sync'd on a remote database, have a look at the
-            <a class="icon-user icon-pr" href="#/options">Account &amp; options</a> page.
+            Для того чтобы списки синхронизировались, можно авторизоваться в настройках
+            <a class="icon-user icon-pr" href="#/options">Account &amp; options</a> и твои списки будут доступны с любого устройства
         </p>
 
         <hr />
-        <h4>Share this app</h4>
-        <div>
-            <button class="btn bg-bright-hover icon-twitter icon-pr shadow-paper" @click="share( 'twitter' )">Twitter</button>
-            <button class="btn bg-bright-hover icon-facebook icon-pr shadow-paper" @click="share( 'facebook' )">Facebook</button>
-            <button class="btn bg-bright-hover icon-reddit icon-pr shadow-paper" @click="share( 'reddit' )">Reddit</button>
-        </div>
+       
 
     </div>
 </template>

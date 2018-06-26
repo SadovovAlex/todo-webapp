@@ -73,7 +73,7 @@
         {
             var date    = new Date(),
                 year    = date.getUTCFullYear(),
-                month   = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][ date.getMonth() ],
+                month   = ["Янв", "Фев", "Март", "Апр", "Май", "Июнь", "Июль", "Авг", "Сент", "Окт", "Ноя", "Дек"][ date.getMonth() ],
                 day     = date.getUTCDate(),
                 minute  = date.getMinutes(),
                 fullh   = date.getHours(),

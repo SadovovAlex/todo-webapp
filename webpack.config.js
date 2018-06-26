@@ -19,8 +19,8 @@ module.exports = {
     },
 
     devServer: {
-        host: "192.168.0.102",
-        port: 8888,
+        host: "localhost",
+        port: 8080,
         clientLogLevel: "info",
         historyApiFallback: true,
         noInfo: true,
